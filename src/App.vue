@@ -13,20 +13,4 @@ export default {
 };
 </script>
 
-<style>
-.component-border-green,
-.component-border-blue,
-.component-border-red {
-  border: 1px solid;
-}
-.component-border-green {
-  border: green;
-}
-.component-border-blue {
-  border: blue;
-}
-.component-border-red {
-  border: red;
-}
-/* https://html-css-js.com/css/generator/border-outline/ */
-</style>
+<style></style>
