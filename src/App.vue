@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <the-nav></the-nav>
+  <the-main-body></the-main-body>
+  <the-footer></the-footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TheNav from "./components/TheNav.vue";
+import TheMainBody from "./components/TheMainBody.vue";
+import TheFooter from "./components/TheFooter.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { TheNav, TheMainBody, TheFooter },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.component-border-green,
+.component-border-blue,
+.component-border-red {
+  border: 1px solid;
 }
+.component-border-green {
+  border: green;
+}
+.component-border-blue {
+  border: blue;
+}
+.component-border-red {
+  border: red;
+}
+/* https://html-css-js.com/css/generator/border-outline/ */
 </style>
