@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
-    TheMainBody.vue
-  </div>
+  <the-main-header></the-main-header>
 </template>
 
 <script>
-export default {};
+import TheMainHeader from "./TheMainHeader.vue";
+export default {
+  components: { TheMainHeader },
+};
 </script>
 
 <style></style>
