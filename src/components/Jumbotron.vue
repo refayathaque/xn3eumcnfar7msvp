@@ -4,11 +4,17 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="display-2 text-success">{{ heading }}</h1>
-        <p class="lead lh-base">
-          {{ primaryText }}
+        <p class="lh-base">
+          {{ primaryTextA }}
+        </p>
+        <p class="lh-base text-success">
+          {{ primaryTextB }}
+        </p>
+        <p class="lh-base">
+          {{ primaryTextC }}
         </p>
         <hr class="my-4" />
-        <p class="lh-base">
+        <p class=" lead lh-base text-primary">
           {{ secondaryText }}
         </p>
       </div>
@@ -20,7 +26,17 @@
 export default {
   props: {
     heading: { type: String, default: "Lorem ipsum" },
-    primaryText: {
+    primaryTextA: {
+      type: String,
+      default:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.",
+    },
+    primaryTextB: {
+      type: String,
+      default:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.",
+    },
+    primaryTextC: {
       type: String,
       default:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.",
