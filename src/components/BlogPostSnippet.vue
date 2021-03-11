@@ -7,10 +7,12 @@
         alt="..."
       />
       <div class="card-img-overlay">
-        <div class="card-header bg-transparent border-primary">{{ title }}</div>
-        <div class="card-body text-primary">
-          <h2 class="card-title">{{ keywords }}</h2>
-          <p class="card-text">
+        <div class="card-header bg-transparent border-primary h4">
+          {{ keywords }}
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">{{ title }}</h2>
+          <p class="card-text text-primary">
             {{ author }}
           </p>
           <p class="card-text">
@@ -18,7 +20,8 @@
           </p>
         </div>
         <div class="card-footer bg-transparent border-primary">
-          <a href="#" class="btn btn-primary">Read</a>
+          <!-- <a href="#" class="btn btn-primary">Read</a> -->
+          <router-link :to="computedLink">Read</router-link>
         </div>
       </div>
     </div>
@@ -27,12 +30,17 @@
 
 <script>
 export default {
-  props: ["title", "date", "author", "keywords"],
+  props: ["title", "date", "author", "keywords", "id"],
+  computed: {
+    computedLink() {
+      return `/blog/${this.id}`;
+    },
+  },
 };
 </script>
 
 <style scoped>
 img {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 </style>

@@ -2,6 +2,7 @@
   <div class="container-fluid pb-4" id="background-image">
     <div class="container">
       <slot></slot>
+      <p class="h2 mt-5 mb-3 text-light">Our research:</p>
       <div class="row row-cols-1 row-cols-md-3">
         <div v-for="blogPost in blogPosts" :key="blogPost.id">
           <blog-post-snippet
@@ -9,6 +10,7 @@
             :date="blogPost.date"
             :author="blogPost.author"
             :keywords="blogPost.keywords"
+            :id="blogPost.id"
           ></blog-post-snippet>
         </div>
       </div>
@@ -17,56 +19,13 @@
 </template>
 
 <script>
-import { Smush32 } from "@thi.ng/random";
 import BlogPostSnippet from "./BlogPostSnippet.vue";
+import blogPosts from "../data/blogPostMeta"
 export default {
   components: { BlogPostSnippet },
   data() {
     return {
-      blogPosts: [
-        {
-          title: "lorem ipsum",
-          date: "lorem ipsum",
-          author: "lorem ipsum",
-          keywords: "lorem ipsum",
-          id: new Smush32(0xdecafbad).buffer,
-        },
-        {
-          title: "lorem ipsum",
-          date: "lorem ipsum lorem ipsum lorem ipsum",
-          author: "lorem ipsum lorem ipsum lorem ipsum",
-          keywords: "lorem ipsum",
-          id: new Smush32(0xdecafbad).buffer,
-        },
-        {
-          title: "lorem ipsum",
-          date: "lorem ipsum",
-          author: "lorem ipsum",
-          keywords: "lorem ipsum",
-          id: new Smush32(0xdecafbad).buffer,
-        },
-        {
-          title: "lorem ipsum",
-          date: "lorem ipsum",
-          author: "lorem ipsum",
-          keywords: "lorem ipsum",
-          id: new Smush32(0xdecafbad).buffer,
-        },
-        {
-          title: "lorem ipsum",
-          date: "lorem ipsum",
-          author: "lorem ipsum",
-          keywords: "lorem ipsum",
-          id: new Smush32(0xdecafbad).buffer,
-        },
-        {
-          title: "lorem ipsum",
-          date: "lorem ipsum",
-          author: "lorem ipsum",
-          keywords: "lorem ipsum",
-          id: new Smush32(0xdecafbad).buffer,
-        },
-      ],
+      blogPosts
     };
   },
 };

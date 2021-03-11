@@ -3,12 +3,12 @@
   <the-collage></the-collage>
   <the-quotes-and-blogs v-if="showQuotesAndBlogs">
     <template #default>
-      <p>What motivates us:</p>
+      <p class="h2 mb-3">Our motivation:</p>
       <figure v-for="quote in quotes" :key="quote.author">
         <blockquote class="blockquote">
           <p>{{ quote.text }}</p>
         </blockquote>
-        <figcaption class="blockquote-footer text-warning">
+        <figcaption class="blockquote-footer text-end text-primary">
           {{ quote.author }}
         </figcaption>
       </figure>
@@ -26,12 +26,10 @@ export default {
     return {
       showQuotesAndBlogs: true,
       quotes: [
-        { text: "hello", author: "john" },
-        { text: "hellooo", author: "paul" },
-        { text: "hellooooo", author: "harry" },
-        { text: "helloooooo", author: "jeff" },
-        { text: "helloooooooo", author: "sherry" },
-        { text: "hellooooooooo", author: "carl" },
+        { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin erat sapien, lacinia pharetra ex in, iaculis pulvinar lectus. Pharetra ex in, iaculis pulvinar lectus.", author: "Bill Gates" },
+        { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin erat sapien, lacinia pharetra ex in, iaculis pulvinar lectus. Pharetra ex in, iaculis pulvinar lectus.", author: "Sir Fazle Abid" },
+        { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin erat sapien, lacinia pharetra ex in, iaculis pulvinar lectus. Pharetra ex in, iaculis pulvinar lectus.", author: "Hope Jahren" },
+        { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin erat sapien, lacinia pharetra ex in, iaculis pulvinar lectus. Pharetra ex in, iaculis pulvinar lectus.", author: "Jeff Goodell" },
       ],
     };
   },
