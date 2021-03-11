@@ -1,7 +1,8 @@
 <template>
-  <footer class="py-3 bg-light fixed-bottom">
+  <footer class="pt-4 pb-5 bg-light">
+    <!-- to make this "sticky" add class "fixed bottom" above -->
     <div class="container">
-      <p class="text-muted">Place sticky footer content here.</p>
+      <p class="text-muted">Built and maintained by Refayat Haque</p>
     </div>
   </footer>
 </template>
