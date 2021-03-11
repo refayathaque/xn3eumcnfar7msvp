@@ -19,9 +19,14 @@
             {{ date }}
           </p>
         </div>
-        <div class="card-footer bg-transparent border-primary">
-          <!-- <a href="#" class="btn btn-primary">Read</a> -->
-          <router-link :to="computedLink">Read</router-link>
+        <div class="d-flex flex-row-reverse bd-highlight">
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            @click="navigateToBlogPost"
+          >
+            Read
+          </button>
         </div>
       </div>
     </div>
@@ -31,9 +36,9 @@
 <script>
 export default {
   props: ["title", "date", "author", "keywords", "id"],
-  computed: {
-    computedLink() {
-      return `/blog/${this.id}`;
+  methods: {
+    navigateToBlogPost() {
+      this.$router.push(`/blog/${this.id}`);
     },
   },
 };

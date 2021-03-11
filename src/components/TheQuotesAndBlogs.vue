@@ -20,12 +20,12 @@
 
 <script>
 import BlogPostSnippet from "./BlogPostSnippet.vue";
-import blogPosts from "../data/blogPostMeta"
+import blogPosts from "../data/blogPostMeta";
 export default {
   components: { BlogPostSnippet },
   data() {
     return {
-      blogPosts
+      blogPosts,
     };
   },
 };
