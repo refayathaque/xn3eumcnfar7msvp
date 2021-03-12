@@ -14,7 +14,7 @@ export default {
   components: { Jumbotron },
   data() {
     return {
-      heading: "autom84good",
+      heading: "αutom84good",
       primaryTextA: "automate (verb): to use machines and computers instead of people to do a job or task",
       primaryTextB: "'84: cosmonaut Svetlana Savitskaya becomes the first woman to perform a space walk",
       primaryTextC: "good (noun): advancement of prosperity or well-being",
