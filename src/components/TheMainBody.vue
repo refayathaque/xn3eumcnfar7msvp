@@ -1,25 +1,27 @@
 <template>
-  <the-main-header></the-main-header>
-  <the-collage></the-collage>
-  <the-quotes-and-blogs v-if="showQuotesAndBlogs">
-    <template #default>
-      <p class="h2 mb-3">Our motivation:</p>
-      <figure v-for="(quote, idx) in quotes" :key="quote.author">
-        <blockquote
-          class="blockquote"
-          :class="{ opaqueBackground: idx === 3 || idx === 2 }"
-        >
-          <p>{{ quote.text }}</p>
-        </blockquote>
-        <figcaption
-          class="blockquote-footer text-end text-primary"
-          :class="{ opaqueBackground: idx === 3 || idx === 2 }"
-        >
-          {{ quote.author }}
-        </figcaption>
-      </figure>
-    </template>
-  </the-quotes-and-blogs>
+  <div>
+    <the-main-header></the-main-header>
+    <the-collage></the-collage>
+    <the-quotes-and-blogs v-if="showQuotesAndBlogs">
+      <template #default>
+        <p class="h2 mb-3">Our motivation:</p>
+        <figure v-for="(quote, idx) in quotes" :key="quote.author">
+          <blockquote
+            class="blockquote"
+            :class="{ opaqueBackground: idx === 3 || idx === 2 }"
+          >
+            <p>{{ quote.text }}</p>
+          </blockquote>
+          <figcaption
+            class="blockquote-footer text-end text-primary"
+            :class="{ opaqueBackground: idx === 3 || idx === 2 }"
+          >
+            {{ quote.author }}
+          </figcaption>
+        </figure>
+      </template>
+    </the-quotes-and-blogs>
+  </div>
 </template>
 
 <script>

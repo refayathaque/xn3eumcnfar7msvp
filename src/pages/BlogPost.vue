@@ -27,6 +27,14 @@
             ></card>
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm">
+            <card heading="Assumptions" body="blah blah"></card>
+          </div>
+          <div class="col-sm">
+            <card heading="Related links" body="blah blah"></card>
+          </div>
+        </div>
         <blog-post-body :body="body"></blog-post-body>
       </div>
     </section>
@@ -35,8 +43,8 @@
 
 <script>
 import blogPosts from "../data/blogPostMeta";
-import BlogPostBody from "./UI/BlogPostBody.vue";
-import Card from "./UI/Card.vue";
+import BlogPostBody from "../components/UI/BlogPostBody.vue";
+import Card from "../components/UI/Card.vue";
 export default {
   components: { Card, BlogPostBody },
   props: ["id"],
