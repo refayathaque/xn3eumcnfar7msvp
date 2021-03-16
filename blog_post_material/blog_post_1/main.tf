@@ -47,11 +47,34 @@ resource "aws_route53_zone" "primary" {
 
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.primary.zone_id
-  name = var.DOMAIN_NAME
-  type = "A"
+  name    = var.DOMAIN_NAME
+  type    = "A"
   alias {
-    name = aws_s3_bucket.website_static_files.website_domain
-    zone_id = aws_s3_bucket.website_static_files.hosted_zone_id
+    name                   = aws_s3_bucket.website_static_files.website_domain
+    zone_id                = aws_s3_bucket.website_static_files.hosted_zone_id
     evaluate_target_health = false
   }
 }
+
+resource "aws_route53_record" "certificate_validation" {
+  zone_id = aws_route53_zone.primary.zone_id
+  name    = element(aws_acm_certificate.certificate.domain_validation_options.*.resource_record_name, count.index)
+  type    = element(aws_acm_certificate.certificate.domain_validation_options.*.resource_record_type, count.index)
+  count   = length(aws_acm_certificate.certificate.domain_validation_options)
+  records = [element(aws_acm_certificate.certificate.domain_validation_options.*.resource_record_value, count.index)]
+  ttl     = 60
+}
+
+resource "aws_acm_certificate" "certificate" {
+  domain_name       = var.DOMAIN_NAME
+  validation_method = "DNS"
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_acm_certificate_validation" "certificate" {
+  certificate_arn         = aws_acm_certificate.certificate.arn
+  validation_record_fqdns = [for record in aws_route53_record.certificate_validation : record.fqdn]
+}
+

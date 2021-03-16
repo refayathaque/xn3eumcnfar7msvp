@@ -8,6 +8,7 @@
   * Must mention why it's better to keep data in cloud - More secure, automatically replicated, can be queried from anywhere because centralized, etc.
 * A complete news site, look at simple ones like Dhaka Tribune and `arabnews.com`
 * Incorporating Google Ads to any site
+* Dockerize a Vue app, and how to use with Docker on another machine
 
 ## Thought dumps
 * Use Vue slots in blog post component for main text body, component will take other things like title, keywords, author, data, etc. as props
