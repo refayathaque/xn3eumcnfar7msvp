@@ -9,6 +9,7 @@ variable "BUCKET_NAME" {
 }
 
 variable "DOMAIN_NAME" {
-  default = "autom84good.com"
+  # default = "autom84good.com"
+  default = "sojicar.com"
   type    = string
 }

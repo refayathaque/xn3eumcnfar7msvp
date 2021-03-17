@@ -41,29 +41,8 @@ resource "null_resource" "upload_static_files" {
 }
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html#using-s3-commands-managing-objects-sync
 
-resource "aws_route53_zone" "primary" {
-  name = var.DOMAIN_NAME
-}
+####
 
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.primary.zone_id
-  name    = var.DOMAIN_NAME
-  type    = "A"
-  alias {
-    name                   = aws_s3_bucket.website_static_files.website_domain
-    zone_id                = aws_s3_bucket.website_static_files.hosted_zone_id
-    evaluate_target_health = false
-  }
-}
-
-resource "aws_route53_record" "certificate_validation" {
-  zone_id = aws_route53_zone.primary.zone_id
-  name    = element(aws_acm_certificate.certificate.domain_validation_options.*.resource_record_name, count.index)
-  type    = element(aws_acm_certificate.certificate.domain_validation_options.*.resource_record_type, count.index)
-  count   = length(aws_acm_certificate.certificate.domain_validation_options)
-  records = [element(aws_acm_certificate.certificate.domain_validation_options.*.resource_record_value, count.index)]
-  ttl     = 60
-}
 
 resource "aws_acm_certificate" "certificate" {
   domain_name       = var.DOMAIN_NAME
@@ -71,7 +50,43 @@ resource "aws_acm_certificate" "certificate" {
   lifecycle {
     create_before_destroy = true
   }
+  options {
+    certificate_transparency_logging_preference = "ENABLED"
+  }
 }
+
+resource "aws_route53_zone" "primary" {
+  name = var.DOMAIN_NAME
+}
+
+# resource "aws_route53_record" "www" {
+#   zone_id = aws_route53_zone.primary.zone_id
+#   name    = var.DOMAIN_NAME
+#   type    = "A"
+#   alias {
+#     name                   = aws_s3_bucket.website_static_files.website_domain
+#     zone_id                = aws_s3_bucket.website_static_files.hosted_zone_id
+#     evaluate_target_health = false
+#   }
+# }
+
+resource "aws_route53_record" "certificate_validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.certificate.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
+
+  allow_overwrite = true
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 60
+  type            = each.value.type
+  zone_id         = aws_route53_zone.primary.zone_id
+}
+
 
 resource "aws_acm_certificate_validation" "certificate" {
   certificate_arn         = aws_acm_certificate.certificate.arn
