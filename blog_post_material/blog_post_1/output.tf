@@ -21,3 +21,11 @@ output "certificate_arn" {
 output "certificate_domain_validation_options" {
   value = aws_acm_certificate.certificate.domain_validation_options
 }
+
+output "cloudfront_domain_name" {
+  value = aws_cloudfront_distribution.distribution.domain_name
+}
+
+output "cloudfront_status" {
+  value = aws_cloudfront_distribution.distribution.status
+}
