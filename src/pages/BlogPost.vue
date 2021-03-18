@@ -18,21 +18,35 @@
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <card heading="Potential problem" body="blah blah"></card>
+            <card
+              heading="Potential problem"
+              color="primary"
+              :lines="potentialProblem"
+            ></card>
           </div>
           <div class="col-sm">
             <card
               heading="Solution <abbr title='Too long; did not read'> (TL;DR)</abbr>"
-              body="blah blah"
+              color="success"
+              :lines="solution"
             ></card>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <card heading="Assumptions" body="blah blah"></card>
+            <card
+              heading="Assumptions"
+              color="primary"
+              :lines="assumptions"
+            ></card>
           </div>
           <div class="col-sm">
-            <card heading="Related links" body="blah blah"></card>
+            <card
+              heading="Related links"
+              color="success"
+              :lines="relatedLinks"
+              links
+            ></card>
           </div>
         </div>
         <blog-post-body :body="body"></blog-post-body>
@@ -55,6 +69,10 @@ export default {
       author: null,
       keywords: null,
       body: null,
+      potentialProblem: null,
+      solution: null,
+      assumptions: null,
+      relatedLinks: null,
     };
   },
   created() {
@@ -66,6 +84,10 @@ export default {
     this.author = selectedBlogPost.author;
     this.keywords = selectedBlogPost.keywords;
     this.body = selectedBlogPost.body;
+    this.potentialProblem = selectedBlogPost.potentialProblem;
+    this.solution = selectedBlogPost.solution;
+    this.assumptions = selectedBlogPost.assumptions;
+    this.relatedLinks = selectedBlogPost.relatedLinks;
   },
 };
 </script>

@@ -1,7 +1,6 @@
 export default [
   {
-    heading:
-      "Heading! Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    heading: "Why use Terraform instead of point-click-type in AWS console?",
     id: 1,
   },
   {
