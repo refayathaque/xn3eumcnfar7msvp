@@ -4,7 +4,8 @@
     :primaryTextA="primaryTextA"
     :primaryTextB="primaryTextB"
     :primaryTextC="primaryTextC"
-    :secondaryText="secondaryText"
+    :secondaryTextA="secondaryTextA"
+    :secondaryTextB="secondaryTextB"
   ></jumbotron>
 </template>
 
@@ -16,9 +17,10 @@ export default {
     return {
       heading: "αutom84good",
       primaryTextA: "automate (verb): to use machines and computers instead of people to do a job or task",
-      primaryTextB: "'84: cosmonaut Svetlana Savitskaya becomes the first woman to perform a space walk",
+      primaryTextB: "'84: Methyl isocyanate leak at a pesticide plant in Bhopal, India, kills 3800, 6000 more later die from injuries",
       primaryTextC: "good (noun): advancement of prosperity or well-being",
-      secondaryText: "Leveraging technology to address climate change, sustainability, food security, and women's empowerment",
+      secondaryTextA: "Goal: Providing consultancy and research to empower changemakers in maximizing their impact and potential",
+      secondaryTextB: "Mission: Leveraging technology to fight climate change, with a focus on renewable energy and sustainability",
     };
   },
 };

@@ -1,13 +1,13 @@
 export default [
   {
     text:
-      "I raise up my voice—not so that I can shout, but so that those without a voice can be heard. … We cannot all succeed when half of us are held back.",
-    author: "Malala Yousafzai",
+      "Climate change is destroying our path to sustainability. Ours is a world of looming challenges and increasingly limited resources. Sustainable development offers the best chance to adjust our course.",
+    author: "UN Secretary-General Ban Ki-Moon",
   },
   {
     text:
-      "Every day, almost one billion people go hungry, while a different billion people intentionally foul enough food to feed them. We gamble our forests, fresh water, and fuel on food that we have no intention of eating, and we lose every single time.",
-    author: "Hope Jahren",
+      "We must face up to an inescapable reality: the challenges of sustainability simply overwhelm the adequacy of our responses. With some honorable exceptions, our responses are too few, too little, and too late.",
+    author: "UN Secretary-General Kofi Annan",
   },
   {
     text:
@@ -20,3 +20,5 @@ export default [
     author: "Jeff Goodell",
   },
 ];
+
+// https://greencoast.org/quotes-on-climate-change/

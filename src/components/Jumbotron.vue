@@ -15,7 +15,10 @@
         </p>
         <hr class="my-4" />
         <p class="lead lh-base text-primary">
-          {{ secondaryText }}
+          {{ secondaryTextA }}
+        </p>
+        <p class="lead lh-base text-primary">
+          {{ secondaryTextB }}
         </p>
       </div>
     </div>
@@ -29,19 +32,24 @@ export default {
     primaryTextA: {
       type: String,
       default:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     primaryTextB: {
       type: String,
       default:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     primaryTextC: {
       type: String,
       default:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
-    secondaryText: {
+    secondaryTextA: {
+      type: String,
+      default:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    secondaryTextB: {
       type: String,
       default:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

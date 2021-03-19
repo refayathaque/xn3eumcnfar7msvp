@@ -4,6 +4,12 @@ import BlogPost from "./pages/BlogPost.vue";
 import TheHomePage from "./pages/TheHomePage.vue";
 
 export default createRouter({
+  scrollBehavior(_, _2, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { left: 0, top: 0 };
+  },
   history: createWebHistory(),
   routes: [
     { path: "/", redirect: "/home" },
