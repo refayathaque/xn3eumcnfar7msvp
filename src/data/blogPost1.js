@@ -1,7 +1,7 @@
 export default [
   {
     image:
-    "https://images.unsplash.com/photo-1519045944554-410ad39c1af8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2547&q=80",
+      "https://images.unsplash.com/photo-1519045944554-410ad39c1af8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2547&q=80",
     id: Math.random(),
     alt: "Green plants in Vienna, Austria. Photographed by Katja-Anna Krug",
   },
@@ -20,7 +20,8 @@ export default [
     id: Math.random(),
   },
   {
-    heading: "Purchasing domain on GoDaddy and understanding relevant AWS services",
+    heading:
+      "Purchasing domain on GoDaddy and understanding relevant AWS services",
     id: Math.random(),
   },
   {
@@ -49,12 +50,35 @@ export default [
     id: Math.random(),
   },
   {
-    heading: "Analyzing the Terraform code and interplay between AWS services",
+    heading: "Terraform code basics",
     id: Math.random(),
   },
   {
     text:
-      "As you peruse the files in the repository, you must be thinking how these files are going to be processed. The order of the code, and in which <code>.tf</code> (terraform) file you place it in doesn't matter. Terraform is smart enough to know that it needs to look for HCL (low-level syntax of the Terraform language) code defining cloud resources only within <code>.tf</code> files, once it gets all the code it'll organize based on the dependency graph and prepare for you.",
+      "As you peruse the files in the repository, you must be thinking how these files are going to be processed. The order of the code, and in which <code>.tf</code> (terraform) file you place it in doesn't matter. Terraform is smart enough to know that it needs to look for HCL (low-level syntax of the Terraform language) code defining cloud resources only within <code>.tf</code> files, once it gets all the code it'll organize based on the dependency graph and prepare for you. What is a <a href='https://learn.hashicorp.com/tutorials/terraform/dependencies'>dependency graph</a> you ask? It's Terraform's way of knowing the order of resource provisioning (because certain AWS resources need to exist prior to others, e.g., you can't upload the <code>index.html</code> without there being an S3 bucket first), and this is built before you run the code.",
+    id: Math.random(),
+  },
+  {
+    text:
+      "You'll see a file containing the <a href='https://www.terraform.io/docs/language/providers/index.html'>provider</a>, and that's what gives Terraform the knowledge it needs to create the dependency graph. But at a broader level, the provider is a plugin that allows Terraform to leverage AWS APIs to provision resources. Providers supply Terraform with the resource types, arguments, data sources, etc., in needs to comprehend, and act on, our IaC. Terraform will not know what to do without a provider, think of it as an API library that helps make sense of your IaC and build infrastructure remotely.",
+    id: Math.random(),
+  },
+  {
+    text:
+      "Before diving into the AWS service specific Terraform code, it's worthwhile to get a grasp over the <code>output.tf</code> and <code>vars.tf</code> files. Starting with the vars file, you see that we are declaring variables here, and this is really what modularizes things in the Terraform world. You can use these input variables as parameters for your IaC, and this allows you to customize how your code without actually having to change any of the configuration. One of the input variables is the <code>DOMAIN_NAME</code>, which makes sense because this will vary from website to website. Moving to the output file, these are values Terraform return once it's provisioned all resources, we will need <code>route-53-hosted-zone-name-servers</code> to complete our GoDaddy configuration as you'll see.",
+    id: Math.random(),
+  },
+  {
+    text:
+      "Our code comprises of mostly resources, and these are deemed the most significant part of the Terraform language. A resource block is designed to describe a single, or several, infrastructure object(s), things like AWS VPCs (Virtual Private Cloud), EC2 (Elastic Compute Cloud) instances or an S3 bucket. When writing Terraform IaC you will work with resources for the most part, but now and then you might have to rely on a data source. The key difference between a data source and <i>resource</i> is that the resource is considered <i>managed</i> because you use the block to create, update, and delete infrastructure, but data sources only <i>read</i> objects.",
+    id: Math.random(),
+  },
+  {
+    heading: "Analyzing Terraform resources and interplay between AWS services",
+    id: Math.random(),
+  },
+  {
+    gistId: "b520a9ffa9a8b4d8f0eacdcd85aa5b64",
     id: Math.random(),
   },
 ];

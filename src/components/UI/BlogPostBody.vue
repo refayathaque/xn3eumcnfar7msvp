@@ -4,17 +4,25 @@
       {{ bodyObject.heading }}
     </div>
     <img
+      v-else-if="bodyObject.hasOwnProperty('image')"
       class="img-fluid"
       :src="bodyObject.image"
       :alt="bodyObject.alt"
-      v-else-if="bodyObject.hasOwnProperty('image')"
     />
-    <div v-else v-html="bodyObject.text"></div>
+    <div
+      v-else-if="bodyObject.hasOwnProperty('text')"
+      v-html="bodyObject.text"
+    ></div>
+    <div v-else>
+      <gist :id="bodyObject.gistId"></gist>
+    </div>
   </div>
 </template>
 
 <script>
+import Gist from "./Gist.vue";
 export default {
+  components: { Gist },
   props: ["body"],
 };
 </script>
