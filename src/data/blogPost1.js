@@ -106,7 +106,19 @@ export default [
   },
   {
     text:
-      "",
+      "Here we are creating a certificate through ACM but validating it using our domain purchased on GoDaddy. After this part of the code is run, Terraform will wait for you to take the CNAME name and value and add it as a GoDaddy DNS record. You'll either edit an existing CNAME record or create a new one (doesn't matter which). Using the created certificate under ACM in the AWS portal, you'll copy the CNAME <i>Name</i> to <i>Host</i> in GoDaddy, but only the part preceding <code>.(wtv_ur_domain_is).</code>. Similarly, you'll copy the CNAME <i>value</i> to <i>Points to</i>, but here you will include the entire value. While Terraform waits for you, it'll log something like <code>aws_cloudfront_distribution.distribution: Still creating... [2m30s elapsed]</code>. Screenshots below should help understand what you'll have to do.",
     id: Math.random(),
+  },
+  {
+    image:
+      "https://autom84good-research-public-images.s3.amazonaws.com/acm-validation-cname-name-value.png",
+    id: Math.random(),
+    alt: "ACM validation CNAME Name Value",
+  },
+  {
+    image:
+      "https://autom84good-research-public-images.s3.amazonaws.com/go-daddy-cname-for-cert-validation.png",
+    id: Math.random(),
+    alt: "GoDaddy CNAME for certificate validation",
   },
 ];
