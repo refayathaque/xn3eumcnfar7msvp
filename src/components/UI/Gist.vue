@@ -1,6 +1,10 @@
 <template>
-  <div v-if="html" v-html="html"></div>
-  <Loading v-else />
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <div v-if="html" v-html="html"></div>
+      <Loading v-else />
+    </div>
+  </div>
 </template>
 
 <script>

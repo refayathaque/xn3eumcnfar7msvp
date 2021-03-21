@@ -81,4 +81,32 @@ export default [
     gistId: "b520a9ffa9a8b4d8f0eacdcd85aa5b64",
     id: Math.random(),
   },
+  {
+    text:
+      "We'll start with S3 as it's sort of the bedrock of our website, the static file will live and be served from here. So we declare a <i>resource type</i> <code>aws_s3_bucket</code> resource with the <i>resource name</i>name <code>website_static_files</code>, as you'll see later, we'll use both the resource type and resource name to reference this bucket in other parts of our Terraform code. This resource will create the bucket as per the name we provide in the variables file, and set its access level accordingly. The ACL, or Access Control List, is set to private since we won't allow end users to access the bucket directly (they'll get to it through CloudFront). The policy document is also included, and you might be wondering why this is a data source. 🤔",
+    id: Math.random(),
+  },
+  {
+    text:
+      "Above, we mentioned that data sources are used to <i>read only</i>, differentiating this from managed resources is the fact that it's primarily used to fetch existing configuration from AWS. So why is it being used here to create a custom IAM (Identity Access Management) policy? The distinguishing factor is that this is purely a policy <i>document</i>, we're simply using this data source to 'generate an <a href='https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document'>IAM policy document</a> in JSON format for use with resources that expect policy documents...Using this data source to generate policy documents is optional. It is also valid to use literal JSON strings in your configuration...' The alternative would be to plop the policy JSON in the S3 resource itself, but that would not be as legible. But in short, this is a data source because all it's doing is converting an IAM policy to JSON behind the scenes, it's not really 'managing' anything.",
+    id: Math.random(),
+  },
+  {
+    text:
+      "The final resource type you see here is a <code>null resource</code>, which can use the Terraform <code>provisioner</code> feature to run bash commands from machine running Terraform. Here we tell Terraform to upload the static html file to S3, <i>only after the bucket has been created</i>, which is self-explanatory. The explicit <code>depends_on</code> is required here because this resource type isn't a part of the AWS provider, and so Terraform won't know how to interpret it when it builds it's dependency graph, we need to tell Terraform where this resource stands in terms of the order of operations.",
+    id: Math.random(),
+  },
+  {
+    heading: "ACM",
+    id: Math.random(),
+  },
+  {
+    gistId: "999546170efe381a6c9e2bc7e0f2df11",
+    id: Math.random(),
+  },
+  {
+    text:
+      "",
+    id: Math.random(),
+  },
 ];
