@@ -11,6 +11,7 @@
             :author="blogPost.author"
             :keywords="blogPost.keywords"
             :id="blogPost.id"
+            :active="blogPost.active"
           ></blog-post-snippet>
         </div>
       </div>
@@ -32,7 +33,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap");
 #background-image {
   background-image: linear-gradient(
       to bottom,
@@ -41,6 +41,5 @@ export default {
       rgb(248, 249, 250, 1)
     ),
     url("../images/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg");
-  /* font-family: "Shippori Mincho B1", serif; */
 }
 </style>
