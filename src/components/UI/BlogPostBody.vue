@@ -9,6 +9,24 @@
       :src="bodyObject.image"
       :alt="bodyObject.alt"
     />
+    <div v-else-if="bodyObject.hasOwnProperty('sideBySideImages')">
+      <div class="row">
+        <div class="col-sm">
+          <img
+            class="img-fluid"
+            :src="bodyObject.sideBySideImages[0].link"
+            :alt="bodyObject.sideBySideImages[0].alt"
+          />
+        </div>
+        <div class="col-sm">
+          <img
+            class="img-fluid"
+            :src="bodyObject.sideBySideImages[1].link"
+            :alt="bodyObject.sideBySideImages[1].alt"
+          />
+        </div>
+      </div>
+    </div>
     <div
       v-else-if="bodyObject.hasOwnProperty('text')"
       v-html="bodyObject.text"

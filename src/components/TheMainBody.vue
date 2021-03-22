@@ -10,7 +10,7 @@
             class="blockquote"
             :class="{ opaqueBackground: idx === 3 || idx === 2 }"
           >
-            <p>{{ quote.text }}</p>
+            <i>{{ quote.text }}</i>
           </blockquote>
           <figcaption
             class="blockquote-footer text-end text-primary"

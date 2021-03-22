@@ -6,13 +6,13 @@ export default [
   },
   {
     text:
-      "We must face up to an inescapable reality: the challenges of sustainability simply overwhelm the adequacy of our responses. With some honorable exceptions, our responses are too few, too little, and too late.",
-    author: "UN Secretary-General Kofi Annan",
+      "...the world has lost more than half a million square miles of forest cover since 1990 (that's an area bigger than South Africa or Peru)...Nigeria, which has one of the highest deforestation rates in the world, has lost more than 60 percent of its forest cover since 1990, and it's one of the world's biggest exporters of charcoal, which is created by charring wood.",
+    author: "Bill Gates",
   },
   {
     text:
-      "...the world has lost more than half a million square miles of forest cover since 1990 (that's an area bigger than South Africa or Peru)...Nigeria, which has one of the highest deforestation rates in the world, has lost more than 60 percent of its forest cover since 1990, and it's one of the world's biggest exporters of charcoal, which is created by charring wood.",
-    author: "Bill Gates",
+      "We must face up to an inescapable reality: the challenges of sustainability simply overwhelm the adequacy of our responses. With some honorable exceptions, our responses are too few, too little, and too late.",
+    author: "UN Secretary-General Kofi Annan",
   },
   {
     text:

@@ -23,6 +23,7 @@
           <button
             type="button"
             class="btn btn-outline-primary"
+            :class="{disabled: !active}"
             @click="navigateToBlogPost"
           >
             Read
@@ -35,7 +36,7 @@
 
 <script>
 export default {
-  props: ["title", "date", "author", "keywords", "id"],
+  props: ["title", "date", "author", "keywords", "id", "active"],
   methods: {
     navigateToBlogPost() {
       this.$router.push(`/blog/${this.id}`);
